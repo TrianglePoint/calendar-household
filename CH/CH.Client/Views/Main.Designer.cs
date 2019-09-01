@@ -39,10 +39,13 @@
             this.lblSunday = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.tlpCalander = new System.Windows.Forms.TableLayoutPanel();
-            this.lblThisMonth = new System.Windows.Forms.Label();
-            this.lblThisYear = new System.Windows.Forms.Label();
-            this.btnNextMonth = new System.Windows.Forms.Button();
-            this.btnLastMonth = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pbarUsedMoney = new System.Windows.Forms.ProgressBar();
             this.btnSetting = new System.Windows.Forms.Button();
@@ -53,13 +56,7 @@
             this.lblUsedPercentValue = new System.Windows.Forms.Label();
             this.lblUsedPercent = new System.Windows.Forms.Label();
             this.lblWarningMessage = new System.Windows.Forms.Label();
-            this.dgvList = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.tlpWeek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -218,13 +215,10 @@
             // 
             // splitContainer.Panel2
             // 
+            this.splitContainer.Panel2.Controls.Add(this.dtp);
             this.splitContainer.Panel2.Controls.Add(this.btnModify);
             this.splitContainer.Panel2.Controls.Add(this.btnAdd);
             this.splitContainer.Panel2.Controls.Add(this.dgvList);
-            this.splitContainer.Panel2.Controls.Add(this.lblThisMonth);
-            this.splitContainer.Panel2.Controls.Add(this.lblThisYear);
-            this.splitContainer.Panel2.Controls.Add(this.btnNextMonth);
-            this.splitContainer.Panel2.Controls.Add(this.btnLastMonth);
             this.splitContainer.Panel2.Controls.Add(this.lblWelcome);
             this.splitContainer.Panel2MinSize = 367;
             this.splitContainer.Size = new System.Drawing.Size(1240, 613);
@@ -247,50 +241,71 @@
             this.tlpCalander.Size = new System.Drawing.Size(869, 613);
             this.tlpCalander.TabIndex = 0;
             // 
-            // lblThisMonth
+            // btnModify
             // 
-            this.lblThisMonth.AutoSize = true;
-            this.lblThisMonth.Font = new System.Drawing.Font("굴림체", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblThisMonth.Location = new System.Drawing.Point(146, 61);
-            this.lblThisMonth.Name = "lblThisMonth";
-            this.lblThisMonth.Size = new System.Drawing.Size(76, 29);
-            this.lblThisMonth.TabIndex = 17;
-            this.lblThisMonth.Text = "12月";
-            this.lblThisMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnModify.Location = new System.Drawing.Point(189, 580);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(178, 30);
+            this.btnModify.TabIndex = 20;
+            this.btnModify.Text = "修正・削除";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
-            // lblThisYear
+            // btnAdd
             // 
-            this.lblThisYear.AutoSize = true;
-            this.lblThisYear.Font = new System.Drawing.Font("굴림체", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblThisYear.Location = new System.Drawing.Point(152, 42);
-            this.lblThisYear.Name = "lblThisYear";
-            this.lblThisYear.Size = new System.Drawing.Size(61, 16);
-            this.lblThisYear.TabIndex = 4;
-            this.lblThisYear.Text = "2019年";
-            this.lblThisYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdd.Location = new System.Drawing.Point(2, 580);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(178, 30);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Text = "追加";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // btnNextMonth
+            // dgvList
             // 
-            this.btnNextMonth.Location = new System.Drawing.Point(261, 61);
-            this.btnNextMonth.Name = "btnNextMonth";
-            this.btnNextMonth.Size = new System.Drawing.Size(75, 23);
-            this.btnNextMonth.TabIndex = 3;
-            this.btnNextMonth.Text = ">>";
-            this.btnNextMonth.UseVisualStyleBackColor = true;
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AllowUserToResizeRows = false;
+            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNo,
+            this.colType,
+            this.colCategory,
+            this.colMoney});
+            this.dgvList.Location = new System.Drawing.Point(3, 40);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(361, 534);
+            this.dgvList.TabIndex = 18;
             // 
-            // btnLastMonth
+            // colNo
             // 
-            this.btnLastMonth.Location = new System.Drawing.Point(31, 61);
-            this.btnLastMonth.Name = "btnLastMonth";
-            this.btnLastMonth.Size = new System.Drawing.Size(75, 23);
-            this.btnLastMonth.TabIndex = 1;
-            this.btnLastMonth.Text = "<<";
-            this.btnLastMonth.UseVisualStyleBackColor = true;
+            this.colNo.FillWeight = 40F;
+            this.colNo.HeaderText = "No";
+            this.colNo.Name = "colNo";
+            // 
+            // colType
+            // 
+            this.colType.FillWeight = 90F;
+            this.colType.HeaderText = "収入・支出";
+            this.colType.Name = "colType";
+            // 
+            // colCategory
+            // 
+            this.colCategory.FillWeight = 90F;
+            this.colCategory.HeaderText = "分類";
+            this.colCategory.Name = "colCategory";
+            // 
+            // colMoney
+            // 
+            this.colMoney.FillWeight = 120F;
+            this.colMoney.HeaderText = "金額";
+            this.colMoney.Name = "colMoney";
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(211, 12);
+            this.lblWelcome.Location = new System.Drawing.Point(239, 13);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(125, 12);
             this.lblWelcome.TabIndex = 0;
@@ -373,73 +388,19 @@
             // lblWarningMessage
             // 
             this.lblWarningMessage.AutoSize = true;
-            this.lblWarningMessage.Location = new System.Drawing.Point(971, 670);
+            this.lblWarningMessage.Location = new System.Drawing.Point(844, 670);
             this.lblWarningMessage.Name = "lblWarningMessage";
-            this.lblWarningMessage.Size = new System.Drawing.Size(87, 12);
+            this.lblWarningMessage.Size = new System.Drawing.Size(181, 12);
             this.lblWarningMessage.TabIndex = 10;
-            this.lblWarningMessage.Text = "やばいですよー";
+            this.lblWarningMessage.Text = "やばいー予算もう超えてますよー";
             this.lblWarningMessage.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dgvList
+            // dtp
             // 
-            this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AllowUserToDeleteRows = false;
-            this.dgvList.AllowUserToResizeRows = false;
-            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNo,
-            this.colType,
-            this.colCategory,
-            this.colMoney});
-            this.dgvList.Location = new System.Drawing.Point(3, 95);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(361, 479);
-            this.dgvList.TabIndex = 18;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(2, 580);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(178, 30);
-            this.btnAdd.TabIndex = 19;
-            this.btnAdd.Text = "追加";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnModify
-            // 
-            this.btnModify.Location = new System.Drawing.Point(189, 580);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(178, 30);
-            this.btnModify.TabIndex = 20;
-            this.btnModify.Text = "修正・削除";
-            this.btnModify.UseVisualStyleBackColor = true;
-            this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
-            // 
-            // colNo
-            // 
-            this.colNo.FillWeight = 40F;
-            this.colNo.HeaderText = "No";
-            this.colNo.Name = "colNo";
-            // 
-            // colType
-            // 
-            this.colType.FillWeight = 90F;
-            this.colType.HeaderText = "収入・支出";
-            this.colType.Name = "colType";
-            // 
-            // colCategory
-            // 
-            this.colCategory.FillWeight = 90F;
-            this.colCategory.HeaderText = "分類";
-            this.colCategory.Name = "colCategory";
-            // 
-            // colMoney
-            // 
-            this.colMoney.FillWeight = 120F;
-            this.colMoney.HeaderText = "金額";
-            this.colMoney.Name = "colMoney";
+            this.dtp.Location = new System.Drawing.Point(3, 13);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(186, 21);
+            this.dtp.TabIndex = 21;
             // 
             // Main
             // 
@@ -487,11 +448,7 @@
         private System.Windows.Forms.Label lblSunday;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.TableLayoutPanel tlpCalander;
-        private System.Windows.Forms.Label lblThisYear;
-        private System.Windows.Forms.Button btnNextMonth;
-        private System.Windows.Forms.Button btnLastMonth;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Label lblThisMonth;
         private System.Windows.Forms.ProgressBar pbarUsedMoney;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Button btnModify;
@@ -508,5 +465,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoney;
+        private System.Windows.Forms.DateTimePicker dtp;
     }
 }
