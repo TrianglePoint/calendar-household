@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Test">
+  <resultMap id="ViewModel" class="CH.WebServer.Models.ViewModel.TestThingViewModel">
+    <result property="id" column="ID"/>
+    <result property="name" column="NAME"/>
+  </resultMap>
+
+  <select id="getTestThing" resultMap="Test.ViewModel">
+    SELECT
+      *
+    FROM
+      TEST_THING T
+  </select>
+</sqlMap>
