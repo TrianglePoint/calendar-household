@@ -12,11 +12,11 @@ namespace CH.WebServer.Controllers
     public class TestController : ApiController
     {
         // GET api/test
-        public IEnumerable<string> Get()
+        public IList<TestThingViewModel> Get()
         {
             TestDAO dao = new TestDAO();
             IList<TestThingViewModel> viewModels = dao.ExecuteGet();
-            return new string[] { "value1", "value2" };
+            return viewModels;
         }
 
         // GET api/values/5
