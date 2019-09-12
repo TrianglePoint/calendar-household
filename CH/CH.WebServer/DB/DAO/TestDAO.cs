@@ -16,7 +16,7 @@ namespace CH.WebServer.DB.DAO
             DomSqlMapBuilder dom = new DomSqlMapBuilder();
             ISqlMapper sqlMapper = dom.Configure(@"./SqlMap.config");
 
-            return sqlMapper.QueryForList<TestThingViewModel>("getTestThing", null);
+            return sqlMapper.QueryForList<TestThingViewModel>("Test.getTestThing", null);
         }
     }
 }

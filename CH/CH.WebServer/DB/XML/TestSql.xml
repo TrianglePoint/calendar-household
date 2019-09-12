@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <sqlMap namespace="Test" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
   <resultMaps>
-    <resultMap id="ViewModel" class="CH.WebServer.Models.ViewModel.TestThingViewModel">
+    <resultMap id="BaseMap" class="CH.WebServer.Models.ViewModel.TestThingViewModel">
       <result property="Id" column="ID"/>
       <result property="Name" column="NAME"/>
     </resultMap>
   </resultMaps>
   <statements>
-    <statement id="getTestThing" resultClass="CH.WebServer.Models.ViewModel.TestThingViewModel">
+    <statement id="getTestThing" resultMap="BaseMap">
        SELECT
          *
        FROM

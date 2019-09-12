@@ -16,6 +16,7 @@ namespace CH.WebServer.Controllers
         {
             TestDAO dao = new TestDAO();
             IList<TestThingViewModel> viewModels = dao.ExecuteGet();
+
             return viewModels;
         }
 
