@@ -167,7 +167,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DB\DAO\common\BaseDAO.cs" />
+    <Compile Include="DB\DAO\Common\BaseDAO.cs" />
     <Compile Include="DB\DAO\TestDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

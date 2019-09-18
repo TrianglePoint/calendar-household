@@ -1,4 +1,5 @@
-﻿using CH.WebServer.Models.ViewModel;
+﻿using CH.WebServer.DB.DAO.Common;
+using CH.WebServer.Models.ViewModel;
 using System.Collections.Generic;
 
 namespace CH.WebServer.DB.DAO

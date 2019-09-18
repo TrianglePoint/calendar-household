@@ -1,7 +1,7 @@
 ﻿using IBatisNet.DataMapper;
 using IBatisNet.DataMapper.Configuration;
 
-namespace CH.WebServer.DB.DAO
+namespace CH.WebServer.DB.DAO.Common
 {
     public class BaseDAO
     {
