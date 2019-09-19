@@ -1,28 +1,29 @@
 ﻿using System.Net;
+using static System.Net.WebRequestMethods;
 
 namespace CH.Client.Common
 {
     public class HttpCommunicator
     {
-        private readonly HttpWebRequest request;
-
-        public HttpCommunicator()
-        {
-            string uriString = "";
-
-            request = (HttpWebRequest)WebRequest.Create(uriString);
-        }
+        private HttpWebRequest request;
+        private HttpWebResponse response;
+        private const string HOST = "localhost";
+        private const string PORT = "8080";
 
         /// <summary>
         /// 
         /// </summary>
-        public void Get(string, )
+        public DTO<T> Get(string controllerName, string functionName, object param)
         {
-            request = 
+            string uri = string.Format("http://{0}:{1}/{2}/{3}", HOST, PORT, controllerName, functionName);
+
+            request = (HttpWebRequest)WebRequest.Create(uri);
             request.ContentType = "application/json";
-            request.Method = "GET";
+            request.Method = Http.Get;
 
+            response = (HttpWebResponse)request.GetResponse();
 
+            response.GetResponseStream()
         }
     }
 }
