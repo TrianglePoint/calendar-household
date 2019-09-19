@@ -10,6 +10,7 @@ namespace CH.Client.Common
         private const string HOST = "localhost";
         private const string PORT = "8080";
 
+        /*
         /// <summary>
         /// 
         /// </summary>
@@ -24,6 +25,6 @@ namespace CH.Client.Common
             response = (HttpWebResponse)request.GetResponse();
 
             response.GetResponseStream()
-        }
+        }*/
     }
 }
