@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace CH.WebServer.Controllers
 {
-    public class TestController : ApiController
+    public class LoginController : ApiController
     {
         // GET api/test
         public IList<LoginViewModel> Get(LoginViewModel where)
