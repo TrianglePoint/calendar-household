@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Login" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <resultMaps>
+    <resultMap id="BaseMap" class="CH.WebServer.Models.ViewModel.LoginViewModel">
+      <result property="UserId" column="USERID"/>
+      <result property="Password" column="PASSWORD"/>
+      <result property="UserName" column="USERNAME"/>
+      <result property="DelFlag" column="DELFLAG"/>
+    </resultMap>
+  </resultMaps>
+  <statements>
+    <statement id="FindInfo" parameterClass ="CH.WebServer.Models.ViewModel.LoginViewModel, CH.WebServer" resultMap="BaseMap">
+       SELECT
+         A.*
+       FROM
+         USER_INFO A
+       <dynamic prepend ="WHERE">
+         <isNotEmpty prepend ="AND" property ="UserId"> A.USERID = <![CDATA[#UserId#]]></isNotEmpty>
+         <isNotEmpty prepend ="AND" property ="Password"> A.PASSWORD = <![CDATA[#Password#]]></isNotEmpty>
+         <isNotEmpty prepend ="AND" property ="DelFlag"> A.DELFLAG = <![CDATA[#DelFlag#]]></isNotEmpty>
+       </dynamic>
+    </statement>
+  </statements>
+</sqlMap>
