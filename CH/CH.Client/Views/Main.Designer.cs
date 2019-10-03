@@ -39,6 +39,7 @@
             this.lblSunday = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.tlpCalander = new System.Windows.Forms.TableLayoutPanel();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
@@ -56,7 +57,6 @@
             this.lblUsedPercentValue = new System.Windows.Forms.Label();
             this.lblUsedPercent = new System.Windows.Forms.Label();
             this.lblWarningMessage = new System.Windows.Forms.Label();
-            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.tlpWeek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -120,7 +120,7 @@
             // 
             this.lblSaturday.AutoSize = true;
             this.lblSaturday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSaturday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSaturday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSaturday.ForeColor = System.Drawing.Color.Blue;
             this.lblSaturday.Location = new System.Drawing.Point(741, 0);
             this.lblSaturday.Name = "lblSaturday";
@@ -133,7 +133,7 @@
             // 
             this.lblFriday.AutoSize = true;
             this.lblFriday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFriday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFriday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFriday.Location = new System.Drawing.Point(618, 0);
             this.lblFriday.Name = "lblFriday";
             this.lblFriday.Size = new System.Drawing.Size(117, 67);
@@ -145,7 +145,7 @@
             // 
             this.lblMonday.AutoSize = true;
             this.lblMonday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMonday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMonday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblMonday.Location = new System.Drawing.Point(126, 0);
             this.lblMonday.Name = "lblMonday";
             this.lblMonday.Size = new System.Drawing.Size(117, 67);
@@ -157,7 +157,7 @@
             // 
             this.lblThursday.AutoSize = true;
             this.lblThursday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblThursday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblThursday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblThursday.Location = new System.Drawing.Point(495, 0);
             this.lblThursday.Name = "lblThursday";
             this.lblThursday.Size = new System.Drawing.Size(117, 67);
@@ -169,7 +169,7 @@
             // 
             this.lblWednesday.AutoSize = true;
             this.lblWednesday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWednesday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblWednesday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblWednesday.Location = new System.Drawing.Point(372, 0);
             this.lblWednesday.Name = "lblWednesday";
             this.lblWednesday.Size = new System.Drawing.Size(117, 67);
@@ -181,7 +181,7 @@
             // 
             this.lblTuesday.AutoSize = true;
             this.lblTuesday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTuesday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTuesday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTuesday.Location = new System.Drawing.Point(249, 0);
             this.lblTuesday.Name = "lblTuesday";
             this.lblTuesday.Size = new System.Drawing.Size(117, 67);
@@ -193,7 +193,7 @@
             // 
             this.lblSunday.AutoSize = true;
             this.lblSunday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSunday.Font = new System.Drawing.Font("궁서", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSunday.Font = new System.Drawing.Font("Gungsuh", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSunday.ForeColor = System.Drawing.Color.Red;
             this.lblSunday.Location = new System.Drawing.Point(3, 0);
             this.lblSunday.Name = "lblSunday";
@@ -204,13 +204,13 @@
             // 
             // splitContainer
             // 
-            this.splitContainer.Location = new System.Drawing.Point(12, 12);
+            this.splitContainer.Location = new System.Drawing.Point(10, 12);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.tlpCalander);
-            this.splitContainer.Panel1.Margin = new System.Windows.Forms.Padding(30);
+            this.splitContainer.Panel1.Margin = new System.Windows.Forms.Padding(26, 30, 26, 30);
             this.splitContainer.Panel1MinSize = 869;
             // 
             // splitContainer.Panel2
@@ -223,13 +223,14 @@
             this.splitContainer.Panel2MinSize = 367;
             this.splitContainer.Size = new System.Drawing.Size(1240, 613);
             this.splitContainer.SplitterDistance = 869;
+            this.splitContainer.SplitterWidth = 3;
             this.splitContainer.TabIndex = 1;
             // 
             // tlpCalander
             // 
             this.tlpCalander.ColumnCount = 1;
             this.tlpCalander.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCalander.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpCalander.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tlpCalander.Controls.Add(this.tlpWeek, 0, 0);
             this.tlpCalander.Controls.Add(this.tlpDate, 0, 1);
             this.tlpCalander.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,11 +242,18 @@
             this.tlpCalander.Size = new System.Drawing.Size(869, 613);
             this.tlpCalander.TabIndex = 0;
             // 
+            // dtp
+            // 
+            this.dtp.Location = new System.Drawing.Point(3, 13);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(160, 19);
+            this.dtp.TabIndex = 21;
+            // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(189, 580);
+            this.btnModify.Location = new System.Drawing.Point(211, 580);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(178, 30);
+            this.btnModify.Size = new System.Drawing.Size(154, 30);
             this.btnModify.TabIndex = 20;
             this.btnModify.Text = "修正・削除";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -253,9 +261,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(2, 580);
+            this.btnAdd.Location = new System.Drawing.Point(3, 580);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(178, 30);
+            this.btnAdd.Size = new System.Drawing.Size(154, 30);
             this.btnAdd.TabIndex = 19;
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -275,7 +283,7 @@
             this.dgvList.Location = new System.Drawing.Point(3, 40);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(361, 534);
+            this.dgvList.Size = new System.Drawing.Size(362, 534);
             this.dgvList.TabIndex = 18;
             // 
             // colNo
@@ -305,24 +313,24 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(239, 13);
+            this.lblWelcome.Location = new System.Drawing.Point(205, 13);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(125, 12);
+            this.lblWelcome.Size = new System.Drawing.Size(100, 12);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "ようこそ、○○さん！";
             // 
             // pbarUsedMoney
             // 
-            this.pbarUsedMoney.Location = new System.Drawing.Point(15, 636);
+            this.pbarUsedMoney.Location = new System.Drawing.Point(13, 636);
             this.pbarUsedMoney.Name = "pbarUsedMoney";
-            this.pbarUsedMoney.Size = new System.Drawing.Size(1237, 23);
+            this.pbarUsedMoney.Size = new System.Drawing.Size(1234, 23);
             this.pbarUsedMoney.TabIndex = 2;
             // 
             // btnSetting
             // 
-            this.btnSetting.Location = new System.Drawing.Point(1074, 665);
+            this.btnSetting.Location = new System.Drawing.Point(1094, 665);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(178, 23);
+            this.btnSetting.Size = new System.Drawing.Size(153, 23);
             this.btnSetting.TabIndex = 3;
             this.btnSetting.Text = "予算設定";
             this.btnSetting.UseVisualStyleBackColor = true;
@@ -331,18 +339,18 @@
             // lblSettingMoney
             // 
             this.lblSettingMoney.AutoSize = true;
-            this.lblSettingMoney.Location = new System.Drawing.Point(13, 670);
+            this.lblSettingMoney.Location = new System.Drawing.Point(11, 670);
             this.lblSettingMoney.Name = "lblSettingMoney";
-            this.lblSettingMoney.Size = new System.Drawing.Size(65, 12);
+            this.lblSettingMoney.Size = new System.Drawing.Size(59, 12);
             this.lblSettingMoney.TabIndex = 4;
             this.lblSettingMoney.Text = "設定金額：";
             // 
             // lblSettingMoneyValue
             // 
             this.lblSettingMoneyValue.AutoSize = true;
-            this.lblSettingMoneyValue.Location = new System.Drawing.Point(78, 670);
+            this.lblSettingMoneyValue.Location = new System.Drawing.Point(67, 670);
             this.lblSettingMoneyValue.Name = "lblSettingMoneyValue";
-            this.lblSettingMoneyValue.Size = new System.Drawing.Size(57, 12);
+            this.lblSettingMoneyValue.Size = new System.Drawing.Size(55, 12);
             this.lblSettingMoneyValue.TabIndex = 5;
             this.lblSettingMoneyValue.Text = "000,000円";
             this.lblSettingMoneyValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -350,9 +358,9 @@
             // lblUsedMoneyValue
             // 
             this.lblUsedMoneyValue.AutoSize = true;
-            this.lblUsedMoneyValue.Location = new System.Drawing.Point(235, 670);
+            this.lblUsedMoneyValue.Location = new System.Drawing.Point(201, 670);
             this.lblUsedMoneyValue.Name = "lblUsedMoneyValue";
-            this.lblUsedMoneyValue.Size = new System.Drawing.Size(57, 12);
+            this.lblUsedMoneyValue.Size = new System.Drawing.Size(55, 12);
             this.lblUsedMoneyValue.TabIndex = 7;
             this.lblUsedMoneyValue.Text = "000,000円";
             this.lblUsedMoneyValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -360,18 +368,18 @@
             // lblUsedMoney
             // 
             this.lblUsedMoney.AutoSize = true;
-            this.lblUsedMoney.Location = new System.Drawing.Point(170, 670);
+            this.lblUsedMoney.Location = new System.Drawing.Point(146, 670);
             this.lblUsedMoney.Name = "lblUsedMoney";
-            this.lblUsedMoney.Size = new System.Drawing.Size(65, 12);
+            this.lblUsedMoney.Size = new System.Drawing.Size(59, 12);
             this.lblUsedMoney.TabIndex = 6;
             this.lblUsedMoney.Text = "使用金額：";
             // 
             // lblUsedPercentValue
             // 
             this.lblUsedPercentValue.AutoSize = true;
-            this.lblUsedPercentValue.Location = new System.Drawing.Point(392, 670);
+            this.lblUsedPercentValue.Location = new System.Drawing.Point(336, 670);
             this.lblUsedPercentValue.Name = "lblUsedPercentValue";
-            this.lblUsedPercentValue.Size = new System.Drawing.Size(33, 12);
+            this.lblUsedPercentValue.Size = new System.Drawing.Size(29, 12);
             this.lblUsedPercentValue.TabIndex = 9;
             this.lblUsedPercentValue.Text = "100%";
             this.lblUsedPercentValue.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -379,32 +387,25 @@
             // lblUsedPercent
             // 
             this.lblUsedPercent.AutoSize = true;
-            this.lblUsedPercent.Location = new System.Drawing.Point(333, 670);
+            this.lblUsedPercent.Location = new System.Drawing.Point(285, 670);
             this.lblUsedPercent.Name = "lblUsedPercent";
-            this.lblUsedPercent.Size = new System.Drawing.Size(53, 12);
+            this.lblUsedPercent.Size = new System.Drawing.Size(47, 12);
             this.lblUsedPercent.TabIndex = 8;
             this.lblUsedPercent.Text = "使用率：";
             // 
             // lblWarningMessage
             // 
             this.lblWarningMessage.AutoSize = true;
-            this.lblWarningMessage.Location = new System.Drawing.Point(844, 670);
+            this.lblWarningMessage.Location = new System.Drawing.Point(723, 670);
             this.lblWarningMessage.Name = "lblWarningMessage";
-            this.lblWarningMessage.Size = new System.Drawing.Size(181, 12);
+            this.lblWarningMessage.Size = new System.Drawing.Size(153, 12);
             this.lblWarningMessage.TabIndex = 10;
             this.lblWarningMessage.Text = "やばいー予算もう超えてますよー";
             this.lblWarningMessage.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dtp
-            // 
-            this.dtp.Location = new System.Drawing.Point(3, 13);
-            this.dtp.Name = "dtp";
-            this.dtp.Size = new System.Drawing.Size(186, 21);
-            this.dtp.TabIndex = 21;
-            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 700);
             this.Controls.Add(this.lblWarningMessage);
