@@ -6,11 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CH.WebServer.Controllers
 {
-    public class TestController : ApiController
-    {
+	[EnableCors(origins: "*", headers: "*", methods: "*")]
+	public class TestController : ApiController
+	{
+		public string GetTest()
+		{
+			return "testOK";
+		}
+
+
         // GET api/test
         public IList<TestThingViewModel> Get()
         {

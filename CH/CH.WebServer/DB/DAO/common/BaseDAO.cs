@@ -3,11 +3,12 @@ using IBatisNet.DataMapper.Configuration;
 
 namespace CH.WebServer.DB.DAO.Common
 {
-    public class BaseDAO
-    {
-        protected readonly ISqlMapper sqlMapper;
+	public class BaseDAO
+	{
+		protected readonly ISqlMapper sqlMapper;
+		protected ISqlMapSession Session { get; set; }
 
-        public BaseDAO()
+		public BaseDAO()
         {
             DomSqlMapBuilder dom = new DomSqlMapBuilder();
             sqlMapper = dom.Configure(@"./SqlMap.config");
@@ -18,23 +19,29 @@ namespace CH.WebServer.DB.DAO.Common
         /// </summary>
         public void BeginTransaction()
         {
-            sqlMapper.BeginTransaction();
+            Session = sqlMapper.BeginTransaction();
         }
 
-        /// <summary>
-        /// Commit
-        /// </summary>
-        public void CommitTransaction()
-        {
-            sqlMapper.CommitTransaction();
+		/// <summary>
+		/// Commit
+		/// </summary>
+		public void CommitTransaction()
+		{
+			if (Session != null)
+			{
+				Session.CommitTransaction();
+			}
         }
 
-        /// <summary>
-        /// RollBack
-        /// </summary>
-        public void RollBackTransaction()
-        {
-            sqlMapper.RollBackTransaction();
+		/// <summary>
+		/// RollBack
+		/// </summary>
+		public void RollBackTransaction()
+		{
+			if (Session != null)
+			{
+				Session.RollBackTransaction();
+			}
         }
     }
 }
