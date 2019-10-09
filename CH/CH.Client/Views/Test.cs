@@ -21,7 +21,6 @@ namespace CH.Client.Views
 		private void Label1_Click(object sender, EventArgs e)
 		{
 			HttpCommunicator http = new HttpCommunicator();
-			http.Get<object>("test", "GetTest", null);
 		}
 	}
 }

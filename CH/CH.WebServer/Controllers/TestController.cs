@@ -7,15 +7,16 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.Results;
 
 namespace CH.WebServer.Controllers
 {
 	[EnableCors(origins: "*", headers: "*", methods: "*")]
 	public class TestController : ApiController
 	{
-		public string GetTest()
+		public JsonResult<string> GetTest()
 		{
-			return "testOK";
+			return Json("testOK");
 		}
 
 
