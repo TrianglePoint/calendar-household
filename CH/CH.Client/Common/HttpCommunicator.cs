@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -11,24 +12,26 @@ namespace CH.Client.Common
     {
         private HttpWebRequest request;
         private HttpWebResponse response;
-        private const string HOST = "127.0.0.1";
+        private const string HOST = "localhost";
         private const string PORT = "44379";
-
-
-
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public async Task Get(string controllerName, string functionName, object param)
+		public async Task<T> Get<T>(string controllerName, string functionName, object param = null)
 		{
-			string uri = string.Format("https://api.warframestat.us/pc/alerts");
+			T result;
+			string uri = string.Format("https://{0}:{1}/api/{2}/{3}", HOST, PORT, controllerName, functionName, param);
 
-			HttpClient client = new HttpClient();
-			HttpResponseMessage responseMessage = await client.GetAsync(uri);
+			HttpClient httpClient = new HttpClient();
+
+			HttpResponseMessage responseMessage = await httpClient.GetAsync(uri);
 			responseMessage.EnsureSuccessStatusCode();
-			string result = await responseMessage.Content.ReadAsStringAsync();
-			Console.WriteLine(result);
+			result = (T)JsonConvert.DeserializeObject(await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false));
+
+			httpClient.Dispose();
+
+			return result;
         }
     }
 }
