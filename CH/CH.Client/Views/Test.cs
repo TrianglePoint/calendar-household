@@ -1,26 +1,27 @@
-﻿using CH.Client.Common;
+﻿using CH.Client.Views.Common;
+using CH.Model.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CH.Client.Views
 {
-	public partial class Test : Form
+	public partial class Test : BaseForm
 	{
+		/// <summary>
+		/// 基本コンストラクタ
+		/// </summary>
 		public Test()
 		{
 			InitializeComponent();
 		}
 
-		private void Label1_Click(object sender, EventArgs e)
+		/// <summary>
+		/// Httpテスト
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void BtnHttp_Click(object sender, EventArgs e)
 		{
-			HttpCommunicator http = new HttpCommunicator();
+			label.Text = Get<TestDTO>("Test", "GetTest", null).ViewModel.Text;
 		}
 	}
 }

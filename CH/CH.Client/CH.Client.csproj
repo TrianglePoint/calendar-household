@@ -51,7 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DTO.cs" />
-    <Compile Include="Common\HttpCommunicator.cs" />
+    <Compile Include="Views\Common\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Common\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\HttpCommunicator.cs" />
     <Compile Include="Views\Edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CH.Model\CH.Model.csproj">
+      <Project>{b8dd8ed1-9f00-4ca1-baec-15c4a809dcac}</Project>
+      <Name>CH.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

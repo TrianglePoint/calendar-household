@@ -1,4 +1,6 @@
-﻿using CH.WebServer.DB.DAO;
+﻿using CH.Model.DTO;
+using CH.Model.ViewModel;
+using CH.WebServer.DB.DAO;
 using CH.WebServer.Models.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -14,9 +16,16 @@ namespace CH.WebServer.Controllers
 	[EnableCors(origins: "*", headers: "*", methods: "*")]
 	public class TestController : ApiController
 	{
-		public JsonResult<string> GetTest()
+		public JsonResult<TestDTO> GetTest()
 		{
-			return Json("testOK");
+			TestDTO dto = new TestDTO
+			{
+				ViewModel = new TestViewModel
+				{
+					Text = "testOK"
+				}
+			};
+			return Json(dto);
 		}
 
 
