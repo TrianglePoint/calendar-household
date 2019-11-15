@@ -1,5 +1,6 @@
 ﻿using CH.Client.Views.Common;
 using CH.Model.DTO;
+using CH.Model.ViewModel;
 using System;
 
 namespace CH.Client.Views
@@ -14,14 +15,17 @@ namespace CH.Client.Views
 			InitializeComponent();
 		}
 
-		/// <summary>
-		/// Httpテスト
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void BtnHttp_Click(object sender, EventArgs e)
-		{
-			label.Text = Get<TestDTO>("Test", "GetTest", null).ViewModel.Text;
-		}
+        /// <summary>
+        /// Httpテスト
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnHttp_Click(object sender, EventArgs e)
+        {
+            label.Text = Get<TestDTO>("Test", "GetTest", new TestViewModel
+            {
+                Text = "hi!"
+            }).ViewModel.Text;
+        }
 	}
 }

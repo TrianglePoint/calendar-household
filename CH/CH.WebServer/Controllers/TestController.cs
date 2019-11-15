@@ -16,16 +16,19 @@ namespace CH.WebServer.Controllers
 	[EnableCors(origins: "*", headers: "*", methods: "*")]
 	public class TestController : ApiController
 	{
-		public JsonResult<TestDTO> GetTest()
+		public TestDTO GetTest(TestViewModel param)
 		{
-			TestDTO dto = new TestDTO
+			TestDTO result = new TestDTO
 			{
 				ViewModel = new TestViewModel
 				{
 					Text = "testOK"
 				}
 			};
-			return Json(dto);
+            
+            result.Status = true;
+
+            return result;
 		}
 
 
