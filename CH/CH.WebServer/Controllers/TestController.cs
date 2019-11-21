@@ -13,9 +13,9 @@ using System.Web.Http.Results;
 
 namespace CH.WebServer.Controllers
 {
-	[EnableCors(origins: "*", headers: "*", methods: "*")]
 	public class TestController : ApiController
 	{
+		[HttpGet]
 		public TestDTO GetTest(TestViewModel param)
 		{
 			TestDTO result = new TestDTO

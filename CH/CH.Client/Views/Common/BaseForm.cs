@@ -50,5 +50,23 @@ namespace CH.Client.Views.Common
 
             return result;
         }
+
+		private async Task<T> GetAsync<T>(string uri, object param)
+		{
+			T t = default(T);
+			HttpClient client = new HttpClient();
+			HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, uri);
+			HttpResponseMessage response;
+			client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+			response = await client.SendAsync(request).ConfigureAwait(false);
+
+			response.EnsureSuccessStatusCode();
+			string result = await response.Content.ReadAsStringAsync();
+
+			t = JsonConvert.DeserializeObject<T>(result);
+
+			return t;
+		}
     }
 }
