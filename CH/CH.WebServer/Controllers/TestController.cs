@@ -1,28 +1,35 @@
 ﻿using CH.Model.DTO;
 using CH.Model.ViewModel;
-using CH.WebServer.DB.DAO;
-using CH.WebServer.Models.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
-using System.Web.Http.Results;
 
 namespace CH.WebServer.Controllers
 {
 	public class TestController : ApiController
 	{
-		[HttpPost]
-		public TestDTO GetTest(TestViewModel viewModel)
+		[HttpGet]
+		public TestDTO Get(TestViewModel viewModel)
 		{
 			TestDTO result = new TestDTO
 			{
 				ViewModel = new TestViewModel
 				{
-					Text = "testOK"
+					Text = "testGet"
+				}
+			};
+
+			result.Status = true;
+
+			return result;
+		}
+
+		[HttpPost]
+		public TestDTO Post(TestViewModel viewModel)
+		{
+			TestDTO result = new TestDTO
+			{
+				ViewModel = new TestViewModel
+				{
+					Text = "testPost"
 				}
 			};
             
@@ -31,35 +38,36 @@ namespace CH.WebServer.Controllers
             return result;
 		}
 
+		[HttpPut]
+		public TestDTO Put(TestViewModel viewModel)
+		{
+			TestDTO result = new TestDTO
+			{
+				ViewModel = new TestViewModel
+				{
+					Text = "testPut"
+				}
+			};
 
-        // GET api/test
-        public IList<TestThingViewModel> Get()
-        {
-            TestDAO dao = new TestDAO();
-            IList<TestThingViewModel> viewModels = dao.ExecuteGet();
+			result.Status = true;
 
-            return viewModels;
-        }
+			return result;
+		}
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+		[HttpDelete]
+		public TestDTO Delete(TestViewModel viewModel)
+		{
+			TestDTO result = new TestDTO
+			{
+				ViewModel = new TestViewModel
+				{
+					Text = "testDelete"
+				}
+			};
 
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
+			result.Status = true;
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
+			return result;
+		}
     }
 }
