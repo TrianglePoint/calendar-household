@@ -15,8 +15,8 @@ namespace CH.WebServer.Controllers
 {
 	public class TestController : ApiController
 	{
-		[HttpGet]
-		public TestDTO GetTest(TestViewModel param)
+		[HttpPost]
+		public TestDTO GetTest(TestViewModel viewModel)
 		{
 			TestDTO result = new TestDTO
 			{
